@@ -1,0 +1,11 @@
+phylo-treetime==0.8.4
+sklearn
+numpy
+matplotlib
+denropy
+biopython
+pycountry
+python-Levenshtein
+smof
+smot
+flutile

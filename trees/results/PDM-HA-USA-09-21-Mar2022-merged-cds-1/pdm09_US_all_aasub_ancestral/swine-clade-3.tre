@@ -1,0 +1,185 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=83;
+	taxlabels
+	'DARPA|A/swine/MO/18254VI/2021|H1N1|HA|2021-03-01'[&!color=#ff8000]
+	'EPI_ISL_349793|1408041|A/Missouri/16/2019|Original|2019-02-26'
+	'EPI_ISL_4702772|1918841|A/North_Dakota/12226/2021|Original|2021-09-01'
+	'EPI_ISL_7334894|1941466|A/Iowa/05/2021|Original|2021-09-19'
+	'EPI_ISL_7334901|1941482|A/Iowa/06/2021|Original|2021-09-22'
+	'ISUVDL|A/swine/Illinois/88901/2020|H1|Illinois|2020-11-11'[&!color=#ff8000]
+	'ISUVDL|A/swine/Iowa/88407/2020|H1|Iowa|2020-11-10'[&!color=#ff8000]
+	'ISUVDL|A/swine/Minnesota/18284/2021|H1|Minnesota|2021-03-02'[&!color=#ff8000]
+	'ISUVDL|A/swine/Nebraska/39142/2021|H1|Nebraska|2021-05-05'[&!color=#ff8000]
+	'ISUVDL|A/swine/USA/75200/2020|H1|USA|2020-09-25'[&!color=#ff8000]
+	'MK922309|A/swine/Nebraska/A02432389/2019|H1N1|USA|04/18/2019'[&!color=#ff8000]
+	'MK922313|A/swine/Nebraska/A02432382/2019|H1N1|USA|04/15/2019'[&!color=#ff8000]
+	'MN688604|A/swine/Iowa/A02478773/2019|H1N1|USA|10/21/2019'[&!color=#ff8000]
+	'MN931935|A/swine/Iowa/A02478944/2019|H1N1|USA|12/11/2019'[&!color=#ff8000]
+	'MT020058|A/swine/Nebraska/A02478998/2020|H1N1|USA|01/14/2020'[&!color=#ff8000]
+	'MT020080|A/swine/Iowa/A02478994/2020|H1N1|USA|01/07/2020'[&!color=#ff8000]
+	'MT052094|A/swine/Iowa/A02479002/2020|H1N1|USA|01/14/2020'[&!color=#ff8000]
+	'MT077043|A/swine/Iowa/A02479015/2020|H1N1|USA|01/17/2020'[&!color=#ff8000]
+	'MT232774|A/swine/Iowa/A02479077/2020|H1N1|USA|02/20/2020'[&!color=#ff8000]
+	'MT233093|A/swine/Nebraska/A02479070/2020|H1N1|USA|02/17/2020'[&!color=#ff8000]
+	'MT319783|A/swine/Iowa/A02479135/2020|H1N1|USA|03/18/2020'[&!color=#ff8000]
+	'MT367657|A/swine/Iowa/A02479177/2020|H1N1|USA|03/25/2020'[&!color=#ff8000]
+	'MT367659|A/swine/Iowa/A02479162/2020|H1N1|USA|03/27/2020'[&!color=#ff8000]
+	'MT367667|A/swine/Iowa/A02479176/2020|H1N1|USA|03/27/2020'[&!color=#ff8000]
+	'MT814305|A/swine/Iowa/A02524480/2020|H1N1|USA|07/06/2020'[&!color=#ff8000]
+	'MW127116|A/swine/Iowa/A02524662/2020|H1N1|USA|09/24/2020'[&!color=#ff8000]
+	'MW204491|A/swine/Minnesota/A02524707/2020|H1N1|USA|10/07/2020'[&!color=#ff8000]
+	'MW205517|A/swine/Missouri/A02245731/2020|H1N1|USA|10/02/2020'[&!color=#ff8000]
+	'MW221305|A/swine/Iowa/A02524730/2020|H1N1|USA|10/12/2020'[&!color=#ff8000]
+	'MW338908|A/swine/Iowa/A02524880/2020|H1N1|USA|11/07/2020'[&!color=#ff8000]
+	'MW449568|A/swine/Missouri/A02524960/2020|H1N1|USA|12/03/2020'[&!color=#ff8000]
+	'MW478478|A/swine/Iowa/A02524991/2020|H1N1|USA|12/16/2020'[&!color=#ff8000]
+	'MW603011|A/swine/Iowa/A02525083/2021|H1N1|USA|01/13/2021'[&!color=#ff8000]
+	'MW776859|A/swine/Missouri/A02525201/2021|H1N1|USA|02/23/2021'[&!color=#ff8000]
+	'MW811345|A/swine/Minnesota/A02525220/2021|H1N1|USA|02/26/2021'[&!color=#ff8000]
+	'MZ091435|A/swine/Iowa/A02525340/2021|H1N1|USA|04/01/2021'[&!color=#ff8000]
+	'MZ305205|A/swine/Iowa/A02525398/2021|H1N1|USA|04/14/2021'[&!color=#ff8000]
+	'MZ329152|A/swine/Nebraska/A02635786/2021|H1N1|USA|05/05/2021'[&!color=#ff8000]
+	'MZ485450|A/swine/Nebraska/A02635831/2021|H1N1|USA|05/13/2021'[&!color=#ff8000]
+	'MZ502599|A/swine/Minnesota/A02635876/2021|H1N1|USA|05/25/2021'[&!color=#ff8000]
+	'MZ606839|A/swine/Iowa/A02635912/2021|H1N1|USA|06/16/2021'[&!color=#ff8000]
+	'OK047463|A/swine/Nebraska/A02635998/2021|H1N2|USA|07/30/2021'[&!color=#ff8000]
+	'OK184695|A/swine/Iowa/A02636076/2021|H1N1|USA|08/23/2021'[&!color=#ff8000]
+	'OK384255|A/swine/Minnesota/A02636086/2021|H1N1|USA|08/31/2021'[&!color=#ff8000]
+	'OK384257|A/swine/Iowa/A02636087/2021|H1N1|USA|08/31/2021'[&!color=#ff8000]
+	'OK625371|A/swine/Iowa/A02636130/2021|H1N1|USA|09/09/2021'[&!color=#ff8000]
+	'OL331048|A/swine/Minnesota/A02248205/2021|H1N1|USA|08/28/2021'[&!color=#ff8000]
+	'OL331194|A/swine/Iowa/A02636171/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]
+	'OL331222|A/swine/Iowa/A02636166/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]
+	'OL331240|A/swine/Iowa/A02636176/2021|H1N1|USA|09/21/2021'[&!color=#ff8000]
+	'OL331246|A/swine/Iowa/A02636168/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]
+	'OL840608|A/swine/Iowa/A02246979/2021|H1N1|USA|10/19/2021'[&!color=#ff8000]
+	'OM504657|A/swine/Iowa/A02636312/2021|H1N1|USA|09/29/2021'[&!color=#ff8000]
+	'OM504683|A/swine/Iowa/A02636295/2021|H1N1|USA|10/01/2021'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/25428/2020|Unsubtypable|IL|2020-03-27||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/27706/2021|H1N1|IL|2021-03-31'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/33609/2020|H1N1|IL|2020-04-27||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/60836/2020|H1N1|IL|2020-08-03||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/78565/2020|H1N1|IL|2020-10-07||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/88555/2020|H1N1|IL|2020-11-10||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/88909/2020|H1N1|IL|2020-11-11||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Illinois/9012/2021|Unsubtypable|IL|2021-02-01||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/25953/2020|Unsubtypable|IA|2020-03-31||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/47021/2019|H1N1|HA|swine|2019-06-20'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/49832/2019|Mixed|HA|swine|2019-07-02'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/61083/2020|H1N1|IA|2020-08-04||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/64612/2020|Unsubtypable|IA|2020-08-18||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/79680/2019|H1N1|HA|swine|2019-10-22'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/79683/2020|H1N1|IA|2020-10-13||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/85565/2019|Unsubtypable|HA|swine|2019-11-12'[&!color=#ff8000]
+	'VDL|A/swine/Iowa/92295/2019|H1N1|IA|2019-12-06||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Kansas/68154/2019|Unsubtypable|HA|swine|2019-09-10'[&!color=#ff8000]
+	'VDL|A/swine/Minnesota/77471/2020|Unsubtypable|MN|2020-10-02||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Missouri/96018/2020|H1N1|MO|2020-12-07||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/15977/2020|Unsubtypable|NE|2020-02-27||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/28003/2019|Mixed|HA|swine|2019-04-11'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/30152/2019|H1N1|HA|swine|2019-04-19'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/30740/2019|H1N1|HA|swine|2019-04-22'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/34343/2019|H1N1|HA|swine|2019-05-03'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/60214/2019|H1N1|HA|swine|2019-08-09'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/87835/2019|Unsubtypable|HA|swine|2019-11-19'[&!color=#ff8000]
+	'VDL|A/swine/Nebraska/96356/2019|Unsubtypable|NE|2019-12-20||pdmH1'[&!color=#ff8000]
+	'VDL|A/swine/USA/57402/2019|Mixed|HA|swine|2019-07-31'[&!color=#ff8000]
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('VDL|A/swine/Kansas/68154/2019|Unsubtypable|HA|swine|2019-09-10'[&!color=#ff8000]:0.708,'VDL|A/swine/Nebraska/28003/2019|Mixed|HA|swine|2019-04-11'[&!color=#ff8000]:0.308,'EPI_ISL_349793|1408041|A/Missouri/16/2019|Original|2019-02-26'[&!color=#000000]:0.178,'MT367657|A/swine/Iowa/A02479177/2020|H1N1|USA|03/25/2020'[&!color=#ff8000]:1.26,('MT020058|A/swine/Nebraska/A02478998/2020|H1N1|USA|01/14/2020'[&!color=#ff8000]:0.791,'VDL|A/swine/Nebraska/96356/2019|Unsubtypable|NE|2019-12-20||pdmH1'[&!color=#ff8000]:0.711)[&label="NODE_0007058",!color=#ff8000]:0.278,('OK047463|A/swine/Nebraska/A02635998/2021|H1N2|USA|07/30/2021'[&!color=#ff8000]:2.16,'VDL|A/swine/Nebraska/15977/2020|Unsubtypable|NE|2020-02-27||pdmH1'[&!color=#ff8000]:0.737)[&label="NODE_0007061",!color=#ff8000]:0.451,('MT233093|A/swine/Nebraska/A02479070/2020|H1N1|USA|02/17/2020'[&!color=#ff8000]:0.0,('OL331246|A/swine/Iowa/A02636168/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]:0.945,('MZ485450|A/swine/Nebraska/A02635831/2021|H1N1|USA|05/13/2021'[&!color=#ff8000]:0.222,('ISUVDL|A/swine/Nebraska/39142/2021|H1|Nebraska|2021-05-05'[&!color=#ff8000]:0.0,'MZ329152|A/swine/Nebraska/A02635786/2021|H1N1|USA|05/05/2021'[&!color=#ff8000]:0.0)[&label="NODE_0009017",!color=#ff8000]:0.202)[&label="NODE_0007064",!color=#ff8000]:0.373)[&label="NODE_0007063",!color=#ff8000]:0.635)[&label="NODE_0007062",!color=#ff8000]:1.16,(('VDL|A/swine/Nebraska/60214/2019|H1N1|HA|swine|2019-08-09'[&!color=#ff8000]:0.157,('VDL|A/swine/Nebraska/87835/2019|Unsubtypable|HA|swine|2019-11-19'[&!color=#ff8000]:0.314,'VDL|A/swine/USA/57402/2019|Mixed|HA|swine|2019-07-31'[&!color=#ff8000]:0.0244)[&label="NODE_0009020",!color=#ff8000]:0.113)[&label="NODE_0007067",!color=#ff8000]:0.314,('MK922313|A/swine/Nebraska/A02432382/2019|H1N1|USA|04/15/2019'[&!color=#ff8000]:0.156,('VDL|A/swine/Iowa/47021/2019|H1N1|HA|swine|2019-06-20'[&!color=#ff8000]:0.315,('VDL|A/swine/Nebraska/34343/2019|H1N1|HA|swine|2019-05-03'[&!color=#ff8000]:0.157,('VDL|A/swine/Iowa/49832/2019|Mixed|HA|swine|2019-07-02'[&!color=#ff8000]:0.204,('VDL|A/swine/Nebraska/30740/2019|H1N1|HA|swine|2019-04-22'[&!color=#ff8000]:0.0122,('MK922309|A/swine/Nebraska/A02432389/2019|H1N1|USA|04/18/2019'[&!color=#ff8000]:0.0,'VDL|A/swine/Nebraska/30152/2019|H1N1|HA|swine|2019-04-19'[&!color=#ff8000]:0.0)[&label="NODE_0009028",!color=#ff8000]:0.00221)[&label="NODE_0009026",!color=#ff8000]:0.00221)[&label="NODE_0009025",!color=#ff8000]:0.113)[&label="NODE_0009024",!color=#ff8000]:0.0273)[&label="NODE_0009022",!color=#ff8000]:0.0213)[&label="NODE_0009021",!color=#ff8000]:0.00599)[&label="NODE_0009018",!color=#ff8000]:0.157,(('MN931935|A/swine/Iowa/A02478944/2019|H1N1|USA|12/11/2019'[&!color=#ff8000]:0.101,'MT020080|A/swine/Iowa/A02478994/2020|H1N1|USA|01/07/2020'[&!color=#ff8000]:0.191)[&label="NODE_0007070",!color=#ff8000]:0.57,(('MN688604|A/swine/Iowa/A02478773/2019|H1N1|USA|10/21/2019'[&!color=#ff8000]:0.0,'VDL|A/swine/Iowa/79680/2019|H1N1|HA|swine|2019-10-22'[&!color=#ff8000]:0.0)[&label="NODE_0007073",!color=#ff8000]:0.276,('VDL|A/swine/Iowa/92295/2019|H1N1|IA|2019-12-06||pdmH1'[&!color=#ff8000]:0.0813,'VDL|A/swine/Iowa/61083/2020|H1N1|IA|2020-08-04||pdmH1'[&!color=#ff8000]:0.751,(('MT319783|A/swine/Iowa/A02479135/2020|H1N1|USA|03/18/2020'[&!color=#ff8000]:0.0731,('MT367659|A/swine/Iowa/A02479162/2020|H1N1|USA|03/27/2020'[&!color=#ff8000]:0.0,'MT367667|A/swine/Iowa/A02479176/2020|H1N1|USA|03/27/2020'[&!color=#ff8000]:0.0)[&label="NODE_0007077",!color=#ff8000]:0.103)[&label="NODE_0007076",!color=#ff8000]:0.295,('MW205517|A/swine/Missouri/A02245731/2020|H1N1|USA|10/02/2020'[&!color=#ff8000]:0.588,('MW603011|A/swine/Iowa/A02525083/2021|H1N1|USA|01/13/2021'[&!color=#ff8000]:0.413,'ISUVDL|A/swine/USA/75200/2020|H1|USA|2020-09-25'[&!color=#ff8000]:0.103,('MW478478|A/swine/Iowa/A02524991/2020|H1N1|USA|12/16/2020'[&!color=#ff8000]:0.157,(('MW776859|A/swine/Missouri/A02525201/2021|H1N1|USA|02/23/2021'[&!color=#ff8000]:0.08,'DARPA|A/swine/MO/18254VI/2021|H1N1|HA|2021-03-01'[&!color=#ff8000]:0.1)[&label="NODE_0007085",!color=#ff8000]:0.162,('VDL|A/swine/Missouri/96018/2020|H1N1|MO|2020-12-07||pdmH1'[&!color=#ff8000]:0.01,'MW449568|A/swine/Missouri/A02524960/2020|H1N1|USA|12/03/2020'[&!color=#ff8000]:0.0)[&label="NODE_0009042",!color=#ff8000]:0.00221)[&label="NODE_0009040",!color=#ff8000]:0.115)[&label="NODE_0009039",!color=#ff8000]:0.165)[&label="NODE_0007080",!color=#ff8000]:0.465)[&label="NODE_0007079",!color=#ff8000]:0.32)[&label="NODE_0009034",!color=#ff8000]:0.00307)[&label="NODE_0007074",!color=#ff8000]:0.315)[&label="NODE_0007072",!color=#ff8000]:0.265,(('MW127116|A/swine/Iowa/A02524662/2020|H1N1|USA|09/24/2020'[&!color=#ff8000]:1.04,('MW221305|A/swine/Iowa/A02524730/2020|H1N1|USA|10/12/2020'[&!color=#ff8000]:0.596,'VDL|A/swine/Iowa/79683/2020|H1N1|IA|2020-10-13||pdmH1'[&!color=#ff8000]:0.606)[&label="NODE_0007088",!color=#ff8000]:0.495)[&label="NODE_0007087",!color=#ff8000]:0.229,('VDL|A/swine/Iowa/85565/2019|Unsubtypable|HA|swine|2019-11-12'[&!color=#ff8000]:0.326,('MT077043|A/swine/Iowa/A02479015/2020|H1N1|USA|01/17/2020'[&!color=#ff8000]:0.211,(('VDL|A/swine/Iowa/25953/2020|Unsubtypable|IA|2020-03-31||pdmH1'[&!color=#ff8000]:0.186,'VDL|A/swine/Iowa/64612/2020|Unsubtypable|IA|2020-08-18||pdmH1'[&!color=#ff8000]:0.556,('MW338908|A/swine/Iowa/A02524880/2020|H1N1|USA|11/07/2020'[&!color=#ff8000]:0.0,'ISUVDL|A/swine/Iowa/88407/2020|H1|Iowa|2020-11-10'[&!color=#ff8000]:0.01)[&label="NODE_0007094",!color=#ff8000]:0.776)[&label="NODE_0007092",!color=#ff8000]:0.157,(('MT232774|A/swine/Iowa/A02479077/2020|H1N1|USA|02/20/2020'[&!color=#ff8000]:0.1,'MT052094|A/swine/Iowa/A02479002/2020|H1N1|USA|01/14/2020'[&!color=#ff8000]:0.0)[&label="NODE_0009053",!color=#ff8000]:0.112,('MT814305|A/swine/Iowa/A02524480/2020|H1N1|USA|07/06/2020'[&!color=#ff8000]:0.425,('VDL|A/swine/Illinois/33609/2020|H1N1|IL|2020-04-27||pdmH1'[&!color=#ff8000]:0.157,('MW204491|A/swine/Minnesota/A02524707/2020|H1N1|USA|10/07/2020'[&!color=#ff8000]:0.52,'VDL|A/swine/Illinois/25428/2020|Unsubtypable|IL|2020-03-27||pdmH1'[&!color=#ff8000]:0.0)[&label="NODE_0009056",!color=#ff8000]:0.0774)[&label="NODE_0009055",!color=#ff8000]:0.0775,('VDL|A/swine/Illinois/88909/2020|H1N1|IL|2020-11-11||pdmH1'[&!color=#ff8000]:0.681,'VDL|A/swine/Illinois/60836/2020|H1N1|IL|2020-08-03||pdmH1'[&!color=#ff8000]:0.411,(('VDL|A/swine/Illinois/88555/2020|H1N1|IL|2020-11-10||pdmH1'[&!color=#ff8000]:0.0,'ISUVDL|A/swine/Illinois/88901/2020|H1|Illinois|2020-11-11'[&!color=#ff8000]:0.0,('MZ305205|A/swine/Iowa/A02525398/2021|H1N1|USA|04/14/2021'[&!color=#ff8000]:0.303,'VDL|A/swine/Illinois/27706/2021|H1N1|IL|2021-03-31'[&!color=#ff8000]:0.273)[&label="NODE_0007105",!color=#ff8000]:0.127)[&label="NODE_0007104",!color=#ff8000]:0.515,('VDL|A/swine/Illinois/78565/2020|H1N1|IL|2020-10-07||pdmH1'[&!color=#ff8000]:0.246,('MZ091435|A/swine/Iowa/A02525340/2021|H1N1|USA|04/01/2021'[&!color=#ff8000]:0.582,'VDL|A/swine/Minnesota/77471/2020|Unsubtypable|MN|2020-10-02||pdmH1'[&!color=#ff8000]:0.0822,(('MW811345|A/swine/Minnesota/A02525220/2021|H1N1|USA|02/26/2021'[&!color=#ff8000]:0.0,'ISUVDL|A/swine/Minnesota/18284/2021|H1|Minnesota|2021-03-02'[&!color=#ff8000]:0.02)[&label="NODE_0007111",!color=#ff8000]:0.214,('VDL|A/swine/Illinois/9012/2021|Unsubtypable|IL|2021-02-01||pdmH1'[&!color=#ff8000]:0.0198,('MZ606839|A/swine/Iowa/A02635912/2021|H1N1|USA|06/16/2021'[&!color=#ff8000]:0.232,(('OK384255|A/swine/Minnesota/A02636086/2021|H1N1|USA|08/31/2021'[&!color=#ff8000]:0.26,'MZ502599|A/swine/Minnesota/A02635876/2021|H1N1|USA|05/25/2021'[&!color=#ff8000]:0.0)[&label="NODE_0009068",!color=#ff8000]:0.0651,('OL331194|A/swine/Iowa/A02636171/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]:0.06,'OL840608|A/swine/Iowa/A02246979/2021|H1N1|USA|10/19/2021'[&!color=#ff8000]:0.14,'OL331048|A/swine/Minnesota/A02248205/2021|H1N1|USA|08/28/2021'[&!color=#ff8000]:0.0,'OM504657|A/swine/Iowa/A02636312/2021|H1N1|USA|09/29/2021'[&!color=#ff8000]:0.09)[&label="NODE_0007117",!color=#ff8000]:0.315)[&label="NODE_0009067",!color=#ff8000]:0.117,('OK184695|A/swine/Iowa/A02636076/2021|H1N1|USA|08/23/2021'[&!color=#ff8000]:0.327,('OL331240|A/swine/Iowa/A02636176/2021|H1N1|USA|09/21/2021'[&!color=#ff8000]:0.131,'OL331222|A/swine/Iowa/A02636166/2021|H1N1|USA|09/20/2021'[&!color=#ff8000]:0.121,'OM504683|A/swine/Iowa/A02636295/2021|H1N1|USA|10/01/2021'[&!color=#ff8000]:0.151,(('EPI_ISL_4702772|1918841|A/North_Dakota/12226/2021|Original|2021-09-01'[&!color=#000000]:0.0,'OK384257|A/swine/Iowa/A02636087/2021|H1N1|USA|08/31/2021'[&!color=#ff8000]:0.0)[&label="NODE_0009073",!color=#ff8000]:0.00221,('OK625371|A/swine/Iowa/A02636130/2021|H1N1|USA|09/09/2021'[&!color=#ff8000]:0.0,('EPI_ISL_7334901|1941482|A/Iowa/06/2021|Original|2021-09-22'[&!color=#000000]:0.01,'EPI_ISL_7334894|1941466|A/Iowa/05/2021|Original|2021-09-19'[&!color=#000000]:0.0)[&label="NODE_0009075",!color=#000000]:0.03)[&label="NODE_0009074",!color=#ff8000]:0.0222)[&label="NODE_0009072",!color=#ff8000]:0.0693)[&label="NODE_0007121",!color=#ff8000]:0.276)[&label="NODE_0007120",!color=#ff8000]:0.0953)[&label="NODE_0007113",!color=#ff8000]:0.157)[&label="NODE_0009065",!color=#ff8000]:0.125)[&label="NODE_0007110",!color=#ff8000]:0.268)[&label="NODE_0007108",!color=#ff8000]:0.153)[&label="NODE_0007107",!color=#ff8000]:0.18)[&label="NODE_0007103",!color=#ff8000]:0.166)[&label="NODE_0007101",!color=#ff8000]:0.0835)[&label="NODE_0007097",!color=#ff8000]:0.157)[&label="NODE_0009052",!color=#ff8000]:0.0213)[&label="NODE_0012888",!color=#ff8000]:0.0672)[&label="NODE_0007090",!color=#ff8000]:0.315)[&label="NODE_0009047",!color=#ff8000]:0.0744)[&label="NODE_0007086",!color=#ff8000]:0.191)[&label="NODE_0007069",!color=#ff8000]:0.288)[&label="NODE_0007046",!color=#ff8000];
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=106;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
