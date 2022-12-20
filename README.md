@@ -17,7 +17,7 @@ Other folders and scripts are specific to the genetic analysis of HA pdm09 seque
 #### Environment setup ####
 Executing the scripts requires Python 3.7 or higher. For the full list of the required python packages see [requirements.txt](requirements.txt). To install these packages we recommend using virtualenv and run `pip install -r requirements.txt` within the virtual environment.
 
-Additionally, we assume that IQ-Tree is installed and can be execute dby calling `iqtree`.
+Additionally, we assume that IQ-Tree is installed and can be executed by calling `iqtree`.
 
 
 #### Download human HA genes ####
