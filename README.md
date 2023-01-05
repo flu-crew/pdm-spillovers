@@ -14,6 +14,11 @@ Other folders and scripts are specific to the genetic analysis of HA pdm09 seque
 
 ### Genetic and phylodynamic analyses of HA pdm09 sequences ###
 
+#### Swine IAV sequence data from the ISU Veterinary Diagnostic Laboratory ####
+Unpublished sequences from the Iowa State University Veterinary Diagnostic Laboratory were submitted to NCBI Genbank, Accesssions OQ179020 - OQ179505. 
+
+9 HA genes did not meet quality control criteria for NCBI Genbank and are available at AgDataCommons, (dataset) Markin, Alexey; Ciacci Zanella, Giovana; Arendsee, Zebulun W.; Zhang, Jianqiang; Krueger, Karen M.; Gauger, Phillip C.; Vincent Baker, Amy L.; Anderson, Tavis K. (2023). Data from: Reverse-zoonoses of 2009 H1N1 pandemic influenza A viruses and evolution in United States swine results in viruses with zoonotic potential. Ag Data Commons. https://doi.org/10.15482/USDA.ADC/1528393.
+
 #### Environment setup ####
 Executing the scripts requires Python 3.7 or higher. For the full list of the required python packages see [requirements.txt](requirements.txt). To install these packages we recommend using virtualenv and run `pip install -r requirements.txt` within the virtual environment.
 
