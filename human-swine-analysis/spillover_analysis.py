@@ -30,7 +30,14 @@ if __name__ == '__main__':
                                     ancestral_ha1_path=path_prefix + 'pdm09_US_all_aasub_ancestral/ancestral_sequences.fasta',
                                     spillover_stats=path_prefix + 'spillover_stats.csv',
                                     variants=path_prefix + 'variants.csv',
+                                    hosts_confidence_path=path_prefix + 'pdm09_US_all_mugration/confidence.csv'
                                     )
+
+        # Analyze the geography of all human-to-swine spillovers.
+        # For each spillover, determine what was the first US state of detection
+        # + the total number of US states reached by the spillovers:
+        pdm_data.spillover_geo_analysis(tree_path=path_prefix + 'pdm09_US_all.timetree.hosts.tre',
+                                        log_path=path_prefix + 'spillovers_geo.csv')
 
         # Analyze all hu-to-sw spillovers and find how long they persisted in swine, save stats
         # (including the percent of spillovers that were maintained for at least a year):

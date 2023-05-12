@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import datetime
+import math
 import re
 from dendropy import Tree, Node
 from Bio import SeqIO
 
-from grippy import helpers, IAVSequence, pdm09
+from grippy import helpers, IAVSequence, pdm09, code_to_us_state, us_state_to_code
 from grippy.helpers import get_strain_name_list
 
 
@@ -338,6 +339,90 @@ def get_final_VDL_list(fasta_path='../pdm09-data/swine/Swine2009_2021-10_pdm_mer
         SeqIO.write(vdl_seqs, '../pdm09-data/swine/VDL_list.fasta', format='fasta')
 
 
+# Returns the 2-letter code of a US state where the strain was collected.
+def parse_state(strain_name: str):
+    name_token = [token for token in strain_name.split('|') if token.startswith('A/sw')][0]
+    state_name = name_token.split('/')[2]
+    state_code = None
+    if state_name in us_state_to_code.keys():
+        return us_state_to_code[state_name]
+    else:
+        return state_name
+
+
+def spillover_geo_analysis(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
+                           log_path='../trees/spillovers_geo_spread.csv',
+                           clock_outliers_path='../trees/clock-outliers_Feb22_iqtree.txt',
+                           prune_outliers=True):
+    to_prune = []
+    if prune_outliers:
+        clock_outliers = get_strain_name_list(clock_outliers_path)
+        to_prune = to_prune + clock_outliers
+    tree = Tree.get(path=tree_path, schema='nexus', preserve_underscores=True)
+    taxa_to_prune = [taxon.label for taxon in tree.taxon_namespace if
+                     any(taxon.label.count(prune_token) > 0 for prune_token in to_prune)]
+    print(f'Pruning {len(taxa_to_prune)} outliers')
+    if taxa_to_prune:
+        tree.prune_taxa_with_labels(taxa_to_prune)
+
+    states = {code: 0 for code in code_to_us_state.keys()}
+    all_states = set()
+    large_spills = 0
+    with open(log_path, 'w') as geo_log:
+        geo_log.write('state,introductions\n')
+        for node in tree.nodes():
+            assert isinstance(node, Node)
+            # node_label = node.taxon.label if node.is_leaf() else node.label
+            first_swine = math.inf
+            first_state = None
+            if node.parent_node:
+                if node.annotations.get_value('host') == 'swine' and node.parent_node.annotations.get_value('host') == 'human':
+                    leaf: Node
+                    seen_states = set()
+                    for leaf in node.leaf_nodes():
+                        if leaf.annotations.get_value('host') == 'swine':
+                            state = parse_state(leaf.taxon.label)
+                            if state in states:
+                                seen_states.add(state)
+                                all_states.add(state)
+                            if leaf.distance_from_root() < first_swine:
+                                first_swine = leaf.distance_from_root()
+                                first_state = parse_state(leaf.taxon.label)
+                    if first_state in states.keys():
+                        states[first_state] = states[first_state] + 1
+                    if len(seen_states) > 1:
+                        large_spills += 1
+        print(states)
+        print(len([state for state in states if states[state] > 0]), len(all_states))
+        print(large_spills)
+        for state in states.keys():
+            geo_log.write(f'{state},{states[state]}\n')
+
+
+def parse_confidence_scores(hosts_conf_path):
+    node_scores = {}
+    nnodes_by_conf = {50: 0, 60: 0, 70: 0, 80: 0, 90: 0, 100: 0}
+    total_internal = 0
+    with open(hosts_conf_path, 'r') as conf_file:
+        conf_file.readline()  # Skip the header.
+        for line in conf_file:
+            line = line.strip('\n').strip()
+            if line:
+                # print(line)
+                node_name, hu_conf, sw_conf = [token.strip() for token in line.split(',')]
+                if node_name.count('NODE') > 0:
+                    total_internal += 1
+                hu_conf = float(hu_conf)
+                sw_conf = float(sw_conf)
+                node_scores[(node_name, 'human')] = hu_conf
+                node_scores[(node_name, 'swine')] = sw_conf
+                max_conf = max(hu_conf, sw_conf) * 100
+                conf_bracket = int((max_conf // 10) * 10)
+                nnodes_by_conf[conf_bracket] = nnodes_by_conf[conf_bracket] + 1
+    print(nnodes_by_conf, total_internal)
+    return node_scores, nnodes_by_conf
+
+
 def color_tree_w_hosts(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
                        timetree_path='../trees/pdm09_US_all_timetree/timetree.nexus',
                        #tree_path='../data/human-swine-pdms-cds-Sept2021.iqtree.pruned.hosts.tre',
@@ -346,7 +431,8 @@ def color_tree_w_hosts(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
                        ancestral_ha1_path='../trees/pdm09_US_all_aasub_ancestral/ancestral_sequences.fasta',
                        spillover_stats='../trees/spillover_stats.csv',
                        variants='../trees/variants.csv',
-                       prune_outliers=True):
+                       prune_outliers=True,
+                       hosts_confidence_path=None):
     timetree = Tree.get(path=timetree_path, schema='nexus', preserve_underscores=True)
     root_date = float(timetree.seed_node.annotations.get_value('date'))
     print('Inferred root date:', root_date)
@@ -354,7 +440,6 @@ def color_tree_w_hosts(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
     # to_prune = ["Utah/46106", "USA/67620", "Ohio/21141"]
     to_prune = []
     if prune_outliers:
-        # clock_outliers = get_strain_name_list('../data/full_treetime/clock-outlier-names.txt')
         clock_outliers = get_strain_name_list(clock_outliers_path)
         to_prune = to_prune + clock_outliers
     tree = Tree.get(path=tree_path, schema='nexus', preserve_underscores=True)
@@ -365,20 +450,29 @@ def color_tree_w_hosts(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
     print(f'Pruning {len(taxa_to_prune)} outliers')
     if taxa_to_prune:
         tree.prune_taxa_with_labels(taxa_to_prune)
+    host_node_scores = None
+    nnodes_by_conf = None
+    if hosts_confidence_path:
+        host_node_scores, nnodes_by_conf = parse_confidence_scores(hosts_confidence_path)
 
     hu_to_sw, sw_to_hu, avg_dist, total_variants = 0, 0, 0, 0
+    hu_to_sw_70up, sw_to_hu_70up = 0, 0
     with open(variants, 'w') as variants_log:
         variants_log.write('hu-strain,spillover_id,spillover_season,time_drifted,ha1_drift\n')
         for node in tree.nodes():
             assert isinstance(node, Node)
+            node_label = node.taxon.label if node.is_leaf() else node.label
             if node.annotations.get_value('host') == 'swine':
                 node.annotations.add_new('!color', '#FFA500')
 
-            # 2007.85
             if node.parent_node and node.parent_node.distance_from_root() + root_date >= 2009:
             # if node.parent_node:
                 if node.annotations.get_value('host') == 'swine' and node.parent_node.annotations.get_value('host') == 'human':
                     hu_to_sw += 1
+                    if host_node_scores and host_node_scores[(node_label, 'swine')] > 0.7 and\
+                            host_node_scores[(node.parent_node.label, 'human')] > 0.7:
+                        hu_to_sw_70up += 1
+
                 if node.annotations.get_value('host') == 'human' and node.parent_node.annotations.get_value('host') == 'swine':
                     hu_ancestor = node.parent_node
                     time_lapsed = node.edge_length
@@ -407,13 +501,20 @@ def color_tree_w_hosts(tree_path='../trees/pdm09_US_all.timetree.hosts.tre',
                         print(len(node.leaf_nodes()))
                     print('-----------')
                     sw_to_hu += 1
+                    if host_node_scores and host_node_scores[(node_label, 'human')] > 0.7 and\
+                            host_node_scores[(node.parent_node.label, 'swine')] > 0.7:
+                        sw_to_hu_70up += 1
 
-    print('Human to swine:', hu_to_sw)
-    print('Swine to human:', sw_to_hu)
+    if hosts_confidence_path:
+        nodes_below_70 = nnodes_by_conf[50] + nnodes_by_conf[60]
+    else:
+        hu_to_sw_70up, sw_to_hu_70up, nodes_below_70 = -1, -1, -1
+    print('Human to swine:', hu_to_sw, hu_to_sw_70up)
+    print('Swine to human:', sw_to_hu, sw_to_hu_70up)
     print('Avg HA1 dist: ', avg_dist / total_variants)
     with open(spillover_stats, 'w') as spillovers:
-        spillovers.write('root-date,hu-to-sw,sw-to-hu\n')
-        spillovers.write(f'{root_date},{hu_to_sw},{sw_to_hu}\n')
+        spillovers.write('root-date,hu-to-sw,sw-to-hu,hu-to-sw-70up,sw-to-hu-70up,nodes-below-70\n')
+        spillovers.write(f'{root_date},{hu_to_sw},{sw_to_hu},{hu_to_sw_70up},{sw_to_hu_70up},{nodes_below_70}\n')
 
     tree.write_to_path(helpers.append_token_to_file_name(tree_path, 'colored'), schema='nexus')
 
