@@ -1,4 +1,4 @@
-## A(H1N1)pdm09 human/swine splillover and evolution analysis 2009-2021 ##
+## A(H1N1)pdm09 human/swine spillover and evolution analysis 2009-2021 ##
 Here we provide scripts and describe how to reproduce the computational analysis in <br/>
 *Markin, A., Zanella, G.C., Arendsee, Z.W., Zhang, J., Krueger, K.M., Gauger, P.C., Vincent Baker, A.L.
 and Anderson, T.K., 2022. **Reverse-zoonoses of 2009 H1N1 pandemic influenza A viruses and evolution in United States swine results in viruses with zoonotic potential**. bioRxiv 2022.12.15.520479. https://doi.org/10.1101/2022.12.15.520479*
@@ -15,7 +15,7 @@ Other folders and scripts are specific to the genetic analysis of HA pdm09 seque
 ### Genetic and phylodynamic analyses of HA pdm09 sequences ###
 
 #### Environment setup ####
-Executing the scripts requires Python 3.7 or higher. For the full list of the required python packages see [requirements.txt](requirements.txt). To install these packages we recommend using virtualenv and run `pip install -r requirements.txt` within the virtual environment.
+Executing the scripts requires Python 3.7 or higher. For the full list of the required python packages see [requirements.txt](requirements.txt). To install these packages we recommend using virtualenv and run `pip install -r requirements.txt` within the virtual environment. If you never used virtualenv, below we provide instructions on how to set up a virtual environment.
 
 Additionally, we assume that IQ-Tree is installed and can be executed by calling `iqtree`.
 
@@ -58,3 +58,10 @@ After executing the phylogenetic pipeline, run the [spillover_analysis.py](human
 
 #### Aggregate spillover statistics across 20 replicates ####
 Please run the R code in [log-combine.R](trees/log_combine.R) to reproduce the spillover statistics presented in the manuscript. Note that the previous steps are not required to run this code, since all necessarily log files are already included in this project.
+
+### Setting up a virtual environment ###
+To set up a virtual environment in Python, first make sure `virtualenv` is installed:
+```
+pip install virtualenv
+```
+Then run `virtualenv pdm-venv` to create a virtual envirnoment and activate it using `source pdm-venv/bin/activate` (assuming you are on Mac/Linux). Once you are done using the virtual environment run `deactivate`.
