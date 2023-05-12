@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
         # Rule mining analysis: establish conclusively that 2020-21 swine pdm09 viruses are a result of onward
         # circulation of pdm09 from prior seasons (rather than novel human-to-swine spillovers).
-        # This will plot parts of Fig 4, which interrupts the further analysis until plots are closed.
+        # This will plot parts of Fig 5, which interrupts the further analysis until plots are closed.
         # To turn it off: set plot_predictors=False.
         infer_spillover_seasons(matrix, tree_path=path_prefix + 'pdm09_US_all.timetree.hosts.tre',
                                 training_seasons=('13-14', '14-15', '15-16', '16-17', '17-18', '18-19', '19-20'), phylogenetic=True,
