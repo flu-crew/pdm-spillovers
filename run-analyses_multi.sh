@@ -24,14 +24,14 @@ dates=$aln.dates.csv
 
 ## Infer time-scaled tree:
 outdir="${directory}pdm09_US_all_timetree"
-treetime --tree $rooted_tree --aln $aln --dates $dates --outdir $outdir
+treetime --tree $rooted_tree --aln $aln --dates $dates --outdir $outdir --max-iter 10 --verbose 5
 time_tree=$aln.timetree.tre
 python dendropy-format-converter.py $outdir/timetree.nexus nexus newick
 cp $outdir/timetree.newick $time_tree
 
 ## Infer ancestral hosts (mugration model):
 outdir="${directory}pdm09_US_all_mugration"
-treetime mugration --tree $time_tree --states trees/$analysis.hosts.csv --attribute host --outdir $outdir
+treetime mugration --tree $time_tree --states trees/$analysis.hosts.csv --attribute host --confidence --outdir $outdir --verbose 5
 host_tree="${directory}pdm09_US_all.timetree.hosts.tre"
 cp $outdir/annotated_tree.nexus $host_tree
 
@@ -39,4 +39,4 @@ cp $outdir/annotated_tree.nexus $host_tree
 ha1_aln="${directory}pdm09_US_all.ha1.aln"
 flutile trim ha1 --conversion dna2aa --subtype H1 $aln > $ha1_aln
 outdir="${directory}pdm09_US_all_aasub_ancestral"
-treetime ancestral --tree $time_tree --aln $ha1_aln --aa --outdir $outdir
+treetime ancestral --tree $time_tree --aln $ha1_aln --aa --outdir $outdir --verbose 5
