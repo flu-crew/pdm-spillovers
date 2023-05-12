@@ -6,16 +6,21 @@ and Anderson, T.K., 2022. **Reverse-zoonoses of 2009 H1N1 pandemic influenza A v
 ### Project structure ###
 See the respective README.txt files within the folders for details/instructions.
 - [detection-stats](detection-stats/): R code and data for analyzing swine/human pdm09 detection statistics between 2010 and 2021.
-- [HI-data](HI-data/): Hemagglutinin Inhibition assays results and R code for Figure 6.
+- [HI-data](HI-data/): Hemagglutinin Inhibition assays results and R code for Figure 7.
 - [blast](blast/): Whole-genome sequences analysis of putative (swine-to-human) variants from 2020 and 2021.
 - [aadiff](aadiff/): Code and HA sequences for Supplemental Table S2.
+- [spillovers-by-season](spillovers-by-season/): R code for persistence of spillovers over time analysis (Fg 3A).
+- [usda-h1-surveillance](usda-h1-surveillance/): R code for swine H1pdm09s to H1-all ratio visulization by season (Fig 3B).
+- [spillovers-geo-plot](spillovers-geo-plot/): Python code for US map plotting, color-coded by frequency of human-to-swine spillovers (Fig 3C).
+- [host-parsimony](host-parsimony/): Maximum parsimony analysis of host transitions (spillovers) with Python.
 
-Other folders and scripts are specific to the genetic analysis of HA pdm09 sequences (see below).
+
+Other folders and code are specific to the genetic analysis of HA pdm09 sequences (see below).
 
 ### Genetic and phylodynamic analyses of HA pdm09 sequences ###
 
 #### Swine IAV sequence data from the ISU Veterinary Diagnostic Laboratory ####
-Unpublished sequences from the Iowa State University Veterinary Diagnostic Laboratory were submitted to NCBI Genbank, Accesssions OQ179020 - OQ179505. 
+Unpublished sequences from the Iowa State University Veterinary Diagnostic Laboratory were submitted to NCBI Genbank, Accesssions OQ179020 - OQ179505.
 
 9 HA genes did not meet quality control criteria for NCBI Genbank and are available at AgDataCommons, (dataset) Markin, Alexey; Ciacci Zanella, Giovana; Arendsee, Zebulun W.; Zhang, Jianqiang; Krueger, Karen M.; Gauger, Phillip C.; Vincent Baker, Amy L.; Anderson, Tavis K. (2023). Data from: Reverse-zoonoses of 2009 H1N1 pandemic influenza A viruses and evolution in United States swine results in viruses with zoonotic potential. Ag Data Commons. https://doi.org/10.15482/USDA.ADC/1528393.
 
