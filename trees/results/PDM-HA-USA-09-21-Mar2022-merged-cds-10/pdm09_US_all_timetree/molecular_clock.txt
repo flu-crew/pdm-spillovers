@@ -1,4 +1,4 @@
 Root-Tip-Regression:
- --rate:	3.598e-03
- --r^2:  	0.97
+ --rate:	3.601e-03
+ --r^2:  	0.96
 

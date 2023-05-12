@@ -4,7 +4,7 @@ Character to attribute mapping:
   B: swine
 
 
-Substitution rate (mu): 0.058529
+Substitution rate (mu): 0.058435
 
 Equilibrium frequencies (pi_i):
   A: 0.1912
@@ -18,5 +18,5 @@ Symmetrized rates from j->i (W_ij):
 Actual rates from j->i (Q_ij):
 	A	B
   A	0	0.6182
-  B	2.6145	0
+  B	2.6146	0
 
