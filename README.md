@@ -1,7 +1,7 @@
 ## A(H1N1)pdm09 human/swine spillover and evolution analysis 2009-2021 ##
 Here we provide scripts and describe how to reproduce the computational analysis in <br/>
 *Markin, A., Zanella, G.C., Arendsee, Z.W., Zhang, J., Krueger, K.M., Gauger, P.C., Vincent Baker, A.L.
-and Anderson, T.K., 2022. **Reverse-zoonoses of 2009 H1N1 pandemic influenza A viruses and evolution in United States swine results in viruses with zoonotic potential**. bioRxiv 2022.12.15.520479. https://doi.org/10.1101/2022.12.15.520479*
+and Anderson, T.K., 2023. **Reverse-zoonoses of 2009 H1N1 pandemic influenza A viruses and evolution in United States swine results in viruses with zoonotic potential**. PLOS Pathogens 19(7): e1011476. https://doi.org/10.1371/journal.ppat.1011476*
 
 ### Project structure ###
 See the respective README.txt files within the folders for details/instructions.
